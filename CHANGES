@@ -1,3 +1,5 @@
+1.0-8 Removed polspline dependence
+
 1.0-7 Renamed mod functions and data sets. Added sirSpat, gravity and ross.app. Updated twostrain and twostrain.app. Added variant dataset.
 
 1.0-6 Changed capitalization of functions and datasets
