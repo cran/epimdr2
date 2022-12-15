@@ -9,7 +9,7 @@ globalVariables("x")
 #' @importFrom graphics abline curve legend lines plot title
 #' @importFrom shiny renderPlot
 #' @importFrom deSolve ode
-## #' @importFrom polspline lspec
+#' @importFrom polspline lspec
 may.app=shinyApp(
 # This creates the User Interface (UI)
 # This creates the User Interface (UI)
@@ -99,7 +99,6 @@ output$plot2 <- renderPlot({
    })
   }
 )
-
 
 
 #' Launch a shiny-app simulating TSIR model
@@ -214,17 +213,14 @@ PS[i,]=sqrt(Re(Fr[[i]])^2+Im(Fr[[i]])^2)
 
 sfit=spectrum(out$I[-c(1:104)])
 
-#sfit2=lspec(out$I[-c(1:104)])
+sfit2=lspec(out$I[-c(1:104)])
 plot(wseq, PS[,2], type="l", 
   xlab="frequency (in radians)", ylab="amplitude", xlim=c(0,0.6))
-#title("Simulated spectrum (periodogram and log-spline) \n and T-fn prediction")
-title("Simulated spectrum (periodogram)and T-fn prediction")
+title("Simulated spectrum (periodogram and log-spline) \n and T-fn prediction")
 lines(pi*sfit$freq/0.5, max(PS[,2])*sfit$spec/max(sfit$spec), col=2)
-#par(new=TRUE)
-#plot(sfit2, col=3, xlim=c(0,0.6), axes=FALSE)
-#legend("topright", c("T-function", "periodogram", "log-spline"), lty=c(1,1,1), col=c(1,2,3))
-legend("topright", c("T-function", "periodogram"), lty=c(1,1), col=c(1,2))
+par(new=TRUE)
+plot(sfit2, col=3, xlim=c(0,0.6), axes=FALSE)
+legend("topright", c("T-function", "periodogram", "log-spline"), lty=c(1,1,1), col=c(1,2,3))
    })
   }
 )
-

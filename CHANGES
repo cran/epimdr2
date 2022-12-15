@@ -1,4 +1,6 @@
-1.0-8 Removed polspline dependence
+1.0-9 Reinstalled log-spline spectrum calculations.
+
+1.0-8 Removed polspline dependence.
 
 1.0-7 Renamed mod functions and data sets. Added sirSpat, gravity and ross.app. Updated twostrain and twostrain.app. Added variant dataset.
 
