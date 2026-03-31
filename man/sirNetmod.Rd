@@ -23,5 +23,5 @@ Function to simulate a stochastic (discrete time) Reed-Frost SIR model on a soci
 cm1=barabasiAlbert(N=200,K=2)
 sim1=sirNetmod(cm1,.3,0.1)
 summary(sim1)
-\dontrun{plot(sim1)}
+\donttest{plot(sim1)}
 }

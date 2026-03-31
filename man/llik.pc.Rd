@@ -25,6 +25,6 @@ This function uses binomial likelihoods to estimate the picewise-constant FoI mo
 }
 \examples{
 x=c(1,4,8,12,18,24)
-para=rep(.1,length(x))
-\dontrun{optim(par=log(para),fn=loglikpc, age=rabbit$a, num=rabbit$inf, denom=rabbit$n, up=x)}
+para=rep(0.1,length(x)+1)
+optim(par=log(para),fn=llik.pc, age=rabbit$a, num=rabbit$inf, denom=rabbit$n, up=x)
 }

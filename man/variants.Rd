@@ -16,13 +16,11 @@ A data frame with 47 rows and 7 variables:
   \item{BA.2.12.1}{Omicron variant BA 2.12.1}
 }
 }
-\source{
-\url{https://coronavirus.health.ny.gov/covid-19-variant-data}
-}
 \usage{
 variants
 }
 \description{
 Weekly fraction of identification of the various CoV-2 variants May 2021 through March 2022.
+From coronavirus.health.ny.gov/clinical-variant-data/
 }
 \keyword{datasets}

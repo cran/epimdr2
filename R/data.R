@@ -98,7 +98,7 @@
 #'   \item{cum_cases}{cumulative incidence}
 #'   \item{cases}{incidence calculated by differencing the cumcases and setting negatives to zero.}
 #' }
-#' @source \url{https://www.cdc.gov/vhf/ebola/outbreaks/2014-west-africa/cumulative-cases-graphs.html}
+#' @source \url{https://stacks.cdc.gov/view/cdc/31408}
 "ebola"
 
 #' Ferrari et al. 2005 outbreak data.
@@ -121,6 +121,7 @@
 #' US SARS-CoV-2 variant data.
 #'
 #'Weekly fraction of identification of the various CoV-2 variants May 2021 through March 2022.
+#'From coronavirus.health.ny.gov/clinical-variant-data/
 #'
 #' @format A data frame with 47 rows and 7 variables:
 #' \describe{
@@ -132,7 +133,6 @@
 #'   \item{BA.2}{Omicron variant BA.2 and BA.2.12}
 #'   \item{BA.2.12.1}{Omicron variant BA 2.12.1}
 #' }
-#' @source \url{https://coronavirus.health.ny.gov/covid-19-variant-data}
 "variants"
 
 
@@ -644,7 +644,6 @@
 #' \item{$cm}{the relational (contact) matrix among the individuals in the network.}}
 #' @source Woodhouse et al. (1994) Mapping a social network of heterosexuals at high risk for HIV Infection. AIDS 8:1331-1336. doi:10.1097/00002030-199409000-00018
 #' @source Klovdahl et al. (1994) Social networks and infectious disease: The Colorado Springs study. Social Science and Medicine 38:79-88. <doi:10.1016/0277-9536(94)90302-6>
-#' @source \url{https://opr.princeton.edu/archive/p90/}
 "cspring"
 
 

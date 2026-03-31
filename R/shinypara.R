@@ -4,7 +4,6 @@
 #' @examples
 #' if(interactive()){nbspat.app}
 #' @export
-#' @importFrom phaseR flowField
 #' @importFrom ggplot2 ggplot
 #' @importFrom plotly ggplotly
 nbspat.app=shinyApp(

@@ -44,7 +44,6 @@ mainPanel(
 
 # This creates the 'behind the scenes' code (Server)
 server <- function(input, output) {
-  require("phaseR", "deSolve")
 grfn=function(t, y, parameters){
   X=y[1]
   Y=y[2]

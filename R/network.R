@@ -21,7 +21,7 @@ CM=toeplitz(c(0,rep(1,K),rep(0,N-2*K-1),rep(1,K)) )
 #' @return A plot of the contact matrix
 #' @examples
 #' cm=ringlattice(N=20,K=4)
-#' \dontrun{plot(cm)}
+#' \donttest{plot(cm)}
 #' @export
 #' @importFrom graphics symbols
 #' @importFrom graphics segments
@@ -121,7 +121,7 @@ return(CM)
 #' cm1=barabasiAlbert(N=200,K=2)
 #' sim1=sirNetmod(cm1,.3,0.1)
 #' summary(sim1)
-#' \dontrun{plot(sim1)}
+#' \donttest{plot(sim1)}
 #' @export
 sirNetmod=function(CM,tau,gamma){
 #generate SIR epidemic on a network specified by the contact matrix 

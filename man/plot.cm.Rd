@@ -19,5 +19,5 @@ Function to plot an object of class CM
 }
 \examples{
 cm=ringlattice(N=20,K=4)
-\dontrun{plot(cm)}
+\donttest{plot(cm)}
 }

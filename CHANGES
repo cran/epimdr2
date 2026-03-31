@@ -1,3 +1,7 @@
+1.1-1 flowField function from phaseR (as per GPL-3 lisence) added as phaseR is archived
+
+1.1-0 Changed description file
+
 1.0-9 Reinstalled log-spline spectrum calculations.
 
 1.0-8 Removed polspline dependence.

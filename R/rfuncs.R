@@ -43,20 +43,6 @@ return(out)
 
 #c3
 
-#' Auxiliary function used by llik.pc 
-#' @param a a vector with the ages 
-#' @param up a vector with upper age-bracket cut-offs
-#' @param foi a vector with FoI
-#' @return A vector with FoIs matched to data
-#' @seealso{llik.pc}
-#' @export
-integrandpc=function(a, up, foi){
-wh=findInterval(a, sort(c(0,up)))
-dur=diff(sort(c(0,up)))
-inte=ifelse(wh==1, foi[1]*a, sum(foi[1:(wh-1)]*dur[1:(wh-1)])+foi[wh]*(a-up[wh-1]))
-return(inte)
- }
-
 
 #' Function to estimate parameters for the piecewise-constant catalytic model
 #'
@@ -70,15 +56,27 @@ return(inte)
 #' @return The negative log-likelihood for a candidate piecewise constant catalytic model
 #' @examples
 #' x=c(1,4,8,12,18,24)
-#' para=rep(.1,length(x))
-#' \dontrun{optim(par=log(para),fn=loglikpc, age=rabbit$a, num=rabbit$inf, denom=rabbit$n, up=x)}
+#' para=rep(0.1,length(x)+1)
+#' optim(par=log(para),fn=llik.pc, age=rabbit$a, num=rabbit$inf, denom=rabbit$n, up=x)
 #' @export
 #' @importFrom stats integrate
 llik.pc = function(par, age, num, denom, up) {
+# Auxiliary function used by llik.pc 
+integrandpc=function(a, up, foi){
+# @param a a vector with the ages 
+# @param up a vector with upper age-bracket cut-offs
+# @param foi a vector with FoI
+# @return A vector with FoIs matched to data
+wh=findInterval(a, sort(c(0,up)))
+dur=diff(sort(c(0,up)))
+inte=ifelse(wh==1, foi[1]*a, sum(foi[1:(wh-1)]*dur[1:(wh-1)])+foi[wh]*(a-up[wh-1]))
+return(inte)
+ }
+
 ll = 0
 for (i in 1:length(age)) {
 p = 1 - exp(-integrandpc(a=age[i], up = up, foi = exp(par)))
-ll = ll + dbinom(num[i], denom[i], p, log = T)
+ll = ll + dbinom(num[i], denom[i], p, log = TRUE)
 }
 return(-ll)
 }

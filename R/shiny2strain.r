@@ -4,6 +4,7 @@
 #' @examples
 #' if(interactive()){twostrain.app}
 #' @export
+#' @importFrom DT DTOutput
 
 twostrain.app=shinyApp(
 ui = pageWithSidebar(
@@ -29,7 +30,7 @@ ui = pageWithSidebar(
     checkboxInput("lg", "4th root", FALSE), width=3),
   mainPanel(
     tabsetPanel(
-      tabPanel("Parameters", dataTableOutput("table1")), 
+      tabPanel("Parameters", DTOutput("table1")), 
       tabPanel("Time", plotOutput("plot1")),
       tabPanel("S* plot", plotOutput("plot2")),
       tabPanel("Phase plane", plotOutput("plot3")),

@@ -37,5 +37,5 @@ inits = c(S = S, I = I, R = R)
 times = 0:200
 out = ode(inits, times, sirSpatmod, parms)
 L=length(usflu$Pop)
-\dontrun{matplot(out[, 50+(1:L)], type = "l", ylab = "Prevalence", xlab = "Day")}
+\donttest{matplot(out[, 50+(1:L)], type = "l", ylab = "Prevalence", xlab = "Day")}
 }
